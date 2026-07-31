@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: calc(56px + env(safe-area-inset-top, 0px));
+  overflow-x: hidden; /* prevents horizontal scroll from wide elements */
 }
 
 /* Main logo – responsive */
@@ -22,6 +23,17 @@ body {
   height: auto;
   display: block;
   margin: 0 auto 20px auto;
+}
+
+/* Responsive videos */
+.video-embed {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Typography */
@@ -120,5 +132,8 @@ a {
   }
   #main-logo {
     max-width: 92%;
+  }
+  .video-embed {
+    max-width: 100%;
   }
 }
