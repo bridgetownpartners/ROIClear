@@ -30,7 +30,7 @@ img {
   margin: 0 auto 20px auto;
 }
 
-/* Sticky logo – keep fixed size */
+/* Sticky logo – fixed size */
 #top-bar-logo {
   max-width: none;
   height: 38px;
@@ -48,17 +48,28 @@ img {
   pointer-events: auto;
 }
 
-/* Social icons – keep reasonably small */
+/* Partner logos – keep reasonable size on desktop */
+.partner-logo {
+  max-width: 260px;
+}
+
+/* Investor Portal buttons */
+.portal-btn {
+  max-width: 320px;
+}
+
+/* Social icons – keep small */
 .biz-day__socials-icon img,
-.biz-day-section__socials-icon img,
-.social-icon img {
+.biz-day-section__socials-icon img {
   max-width: none;
   height: 32px;
   width: auto;
 }
 
 .social-icon img {
+  max-width: none;
   height: 48px;
+  width: auto;
 }
 
 /* Responsive videos */
@@ -155,6 +166,12 @@ a {
   }
   .video-embed {
     max-width: 100%;
+  }
+  .partner-logo {
+    max-width: 200px;
+  }
+  .portal-btn {
+    max-width: 260px;
   }
   .biz-day__socials-icon img,
   .biz-day-section__socials-icon img {
