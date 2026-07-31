@@ -15,6 +15,15 @@ body {
   padding-top: calc(56px + env(safe-area-inset-top, 0px));
 }
 
+/* Main logo – responsive */
+#main-logo {
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
 /* Typography */
 h1 {
   color: #000000;
@@ -67,7 +76,7 @@ a {
   visibility: hidden;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   pointer-events: none;
-  border-radius: 4px; /* softens the white rectangle a bit */
+  border-radius: 4px;
 }
 
 #top-bar-logo.visible {
@@ -108,5 +117,8 @@ a {
   }
   #top-bar-logo {
     height: 34px;
+  }
+  #main-logo {
+    max-width: 92%;
   }
 }
