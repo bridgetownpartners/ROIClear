@@ -67,6 +67,7 @@ a {
   visibility: hidden;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   pointer-events: none;
+  border-radius: 4px; /* softens the white rectangle a bit */
 }
 
 #top-bar-logo.visible {
