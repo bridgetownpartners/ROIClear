@@ -16,10 +16,8 @@
     }
   }
 
-  // Run once on load
   updateLogoVisibility();
 
-  // Scroll (throttled)
   let ticking = false;
   window.addEventListener('scroll', function () {
     if (!ticking) {
@@ -31,11 +29,9 @@
     }
   }, { passive: true });
 
-  // Resize / orientation change
   window.addEventListener('resize', updateLogoVisibility);
   window.addEventListener('orientationchange', updateLogoVisibility);
 
-  // IntersectionObserver as extra safety
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
