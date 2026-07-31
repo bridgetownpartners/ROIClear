@@ -50,7 +50,7 @@ a {
   padding-top: env(safe-area-inset-top, 0px);
   background-color: #000000;
   z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.45);
 }
 
 .top-bar-inner {
@@ -67,13 +67,6 @@ a {
   visibility: hidden;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   pointer-events: none;
-
-  /* Kill the white background that the PNG currently has */
-  mix-blend-mode: multiply;
-  background: transparent;
-
-  /* Soft white glow so the logo stays readable */
-  filter: drop-shadow(0 0 1.5px rgba(255,255,255,0.9));
 }
 
 #top-bar-logo.visible {
