@@ -96,7 +96,7 @@ a:hover { text-decoration: underline; }
   text-align: center;
   background: #0d1f17; /* dark green-black fallback */
   background-image: linear-gradient(rgba(10,10,10,0.72), rgba(10,10,10,0.78)),
-                    url('images/hero-bg.jpg'); /* ← add a nice multifamily/Arizona photo here */
+                    url('../images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   color: white;
