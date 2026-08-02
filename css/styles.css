@@ -10,7 +10,7 @@
   --muted: #444;
   --light-bg: #f7f8f6;
   --white: #ffffff;
-  --max-width: 860px;
+  --max-width: 720px;          /* tightened for better readability */
 }
 
 html {
@@ -87,7 +87,7 @@ a:hover { text-decoration: underline; }
 }
 .btn-nav:hover { background: var(--green-hover) !important; }
 
-/* Mobile header elements (hidden on desktop) */
+/* Mobile header elements */
 .mobile-header-actions {
   display: none;
   align-items: center;
@@ -124,7 +124,7 @@ a:hover { text-decoration: underline; }
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Mobile nav dropdown */
+/* Mobile nav */
 .mobile-nav {
   display: none;
   flex-direction: column;
@@ -229,6 +229,13 @@ a:hover { text-decoration: underline; }
   max-width: var(--max-width);
   margin: 0 auto;
   text-align: center;
+}
+
+/* Consistent text measure across all devices */
+.container p {
+  max-width: 38em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h2 {
