@@ -91,7 +91,7 @@ a:hover { text-decoration: underline; }
 .mobile-header-actions {
   display: none;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;                    /* more breathing room */
 }
 
 .hamburger {
@@ -237,10 +237,11 @@ a:hover { text-decoration: underline; }
 }
 
 h2 {
-  font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+  font-size: clamp(1.55rem, 4vw, 2.2rem);   /* scales down better on mobile */
   font-weight: 700;
   margin: 0 0 1.5rem;
   color: var(--black);
+  white-space: nowrap;                     /* keep headings on one line when possible */
 }
 
 p {
@@ -280,7 +281,7 @@ p {
   width: auto; 
 }
 
-/* Footer social icons – Font Awesome square style */
+/* Footer social icons */
 .footer-social {
   display: flex;
   justify-content: center;
@@ -329,16 +330,47 @@ p {
 /* ===== Responsive ===== */
 @media (max-width: 700px) {
   .desktop-nav { display: none; }
-  .mobile-header-actions { display: flex; }
+  .mobile-header-actions { 
+    display: flex; 
+    gap: 1rem;                 /* breathing room */
+  }
+
+  .btn-nav {
+    padding: 0.4rem 0.9rem;    /* slightly smaller button on mobile */
+    font-size: 0.9rem;
+  }
 
   .hero { min-height: 70vh; padding: 3rem 1rem; }
   .hero-ctas { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 280px; text-align: center; }
+
+  h2 {
+    font-size: clamp(1.35rem, 5.5vw, 1.7rem);  /* keeps long headings on one line */
+    white-space: normal;                       /* allow wrap only if absolutely necessary */
+  }
+
   p { font-size: 1.1rem; }
+
+  .container p {
+    max-width: 22em;           /* tighter measure so your <br> tags control the layout */
+  }
 }
 
 @media (max-width: 480px) {
   body { padding-top: 56px; }
   #top-bar { height: 56px; }
-  #top-bar-logo { height: 30px; }
+  #top-bar-logo { height: 28px; }
+
+  .mobile-header-actions {
+    gap: 0.85rem;
+  }
+
+  .btn-nav {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
 }
