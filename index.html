@@ -6,7 +6,7 @@
   <title>ROIClear.com – Real estate + podcast for business leaders</title>
   <meta name="description" content="ROIClear buys and improves multifamily investment properties. Our investors enjoy capital preservation, tax advantages, and strong ROI.">
   
-  <!-- Favicons (keep your existing ones) -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
@@ -25,20 +25,35 @@
       <a href="#top" class="logo-link" title="ROIClear – back to top">
         <img src="images/ROIClear_logo_400.png" alt="ROIClear" id="top-bar-logo">
       </a>
+
       <nav class="desktop-nav">
         <a href="#investors">Investors</a>
         <a href="#podcast">Podcast</a>
         <a href="#partnerships">Partnerships</a>
         <a href="https://roiclear.cashflowportal.com" class="btn-nav">Investor Portal</a>
       </nav>
+
+      <!-- Mobile: green button + hamburger -->
+      <div class="mobile-header-actions">
+        <a href="https://roiclear.cashflowportal.com" class="btn-nav mobile-cta">Investor Portal</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
+
+    <!-- Mobile menu -->
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="#investors">Investors</a>
+      <a href="#podcast">Podcast</a>
+      <a href="#partnerships">Partnerships</a>
+    </nav>
   </header>
 
   <a id="top"></a>
 
   <!-- ===== Hero ===== -->
   <section class="hero">
-    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>ROIClear buys and improves<br>multifamily investment properties.</h1>
       <div class="hero-ctas">
@@ -61,7 +76,6 @@
         Approved applicants receive early access to our deals.
       </p>
 
-      <!-- Keep the first Vimeo if you still want it here -->
       <div class="video-wrapper mt-3">
         <iframe src="https://player.vimeo.com/video/1015381528?badge=0&autopause=0&player_id=0&app_id=58479"
                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
@@ -69,6 +83,8 @@
       </div>
     </div>
   </section>
+
+  <hr class="section-divider">
 
   <!-- ===== Celebrates Capitalism / Podcast ===== -->
   <section id="podcast" class="section section-alt">
@@ -84,7 +100,6 @@
         If you are a business leader who enjoys learning and celebrating capitalism with your peers, subscribe to the <a href="https://www.youtube.com/@ROIClear"><strong>ROIClear Podcast</strong></a>.
       </p>
 
-      <!-- Social / Podcast platforms -->
       <div class="social-row">
         <a href="https://www.youtube.com/@ROIClear"><img src="./assets/youtube-black-white.svg" alt="YouTube"></a>
         <a href="https://rumble.com/user/ROIClear"><img src="./assets/rumble-logo-bw.png" alt="Rumble"></a>
@@ -97,15 +112,10 @@
                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                 title="ROIClear Podcast: Celebrating Capitalism" class="video-embed"></iframe>
       </div>
-
-      <div class="social-icons">
-        <a href="https://x.com/ROIClear"><img src="./images/social-x.png" alt="X"></a>
-        <a href="https://facebook.com/ROIClearr/"><img src="./images/social-facebook.png" alt="Facebook"></a>
-        <a href="https://instagram.com/ROIClear/"><img src="./images/social-instagram.png" alt="Instagram"></a>
-        <a href="https://linkedin.com/company/ROIClear/"><img src="./images/social-linkedin.png" alt="LinkedIn"></a>
-      </div>
     </div>
   </section>
+
+  <hr class="section-divider">
 
   <!-- ===== Builds Partnerships ===== -->
   <section id="partnerships" class="section">
@@ -135,6 +145,8 @@
     </div>
   </section>
 
+  <hr class="section-divider">
+
   <!-- ===== In Summary ===== -->
   <section class="section section-alt">
     <div class="container">
@@ -146,6 +158,8 @@
       <p class="mt-2"><strong>Do you share our vision?</strong></p>
     </div>
   </section>
+
+  <hr class="section-divider">
 
   <!-- ===== Next Steps ===== -->
   <section class="section next-steps">
@@ -182,5 +196,23 @@
   </footer>
 
   <script src="js/sticky-header.js"></script>
+  <script>
+    // Simple hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
