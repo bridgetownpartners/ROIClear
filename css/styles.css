@@ -10,7 +10,7 @@
   --muted: #444;
   --light-bg: #e8f0e9;
   --white: #ffffff;
-  --max-width: 640px;
+  --max-width: 480px;           /* 75% of video width (640px) */
 }
 
 html {
