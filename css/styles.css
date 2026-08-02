@@ -275,14 +275,15 @@ p {
   flex-wrap: wrap;
 }
 
-/* 30% smaller */
+/* Podcast platform logos (already 30% smaller) */
 .social-row img { 
   height: 22px; 
   width: auto; 
 }
 
+/* Footer social icons – 50% smaller (was 42px → 21px) */
 .footer-social img { 
-  height: 42px; 
+  height: 21px; 
   width: auto; 
   opacity: 0.9;
   transition: opacity 0.2s;
