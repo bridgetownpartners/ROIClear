@@ -107,32 +107,15 @@ a:hover { text-decoration: underline; }
   z-index: 2;
 }
 
-.hero-logo {
-  max-width: 320px;
-  margin: 0 auto 1.75rem;
-  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.7));
-}
-
 .hero h1 {
   font-size: clamp(1.9rem, 4.5vw, 2.85rem);
   font-weight: 700;
   line-height: 1.25;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.75rem;
   color: white;
   text-shadow:
     0 2px 4px rgba(0,0,0,0.8),
     0 4px 16px rgba(0,0,0,0.6);
-}
-
-.hero-lead {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin-bottom: 2.25rem;
-  color: white;
-  opacity: 0.95;
-  text-shadow:
-    0 1px 3px rgba(0,0,0,0.8),
-    0 3px 12px rgba(0,0,0,0.55);
 }
 
 .hero-ctas {
@@ -171,10 +154,13 @@ a:hover { text-decoration: underline; }
 
 /* ===== Sections ===== */
 .section {
-  padding: 4.5rem 1.25rem;
+  padding: 5rem 1.25rem;          /* slightly more breathing room */
+  border-top: 1px solid rgba(0,0,0,0.06);  /* subtle separator */
 }
 
-.section-alt { background: var(--light-bg); }
+.section-alt { 
+  background: var(--light-bg); 
+}
 
 .container {
   max-width: var(--max-width);
@@ -213,7 +199,7 @@ p {
 }
 
 /* ===== Social & Partners ===== */
-.social-row, .social-icons {
+.social-row, .social-icons, .footer-social {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -222,7 +208,17 @@ p {
 }
 
 .social-row img { height: 32px; width: auto; }
-.social-icons img { height: 42px; width: auto; }
+.social-icons img,
+.footer-social img { 
+  height: 42px; 
+  width: auto; 
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+.social-icons img:hover,
+.footer-social img:hover {
+  opacity: 1;
+}
 
 .partners { margin-top: 2.5rem; }
 
@@ -230,14 +226,6 @@ p {
   max-width: 240px;
   margin: 1.5rem auto 0.75rem;
 }
-
-/* ===== Portal buttons ===== */
-.portal-btn {
-  max-width: 300px;
-  margin: 0 auto;
-  transition: transform 0.2s;
-}
-.portal-btn:hover { transform: scale(1.03); }
 
 /* ===== Next Steps & Footer ===== */
 .next-steps { background: #f0f4f1; }
@@ -258,11 +246,14 @@ p {
 .site-footer a { color: #fff; }
 .site-footer p { margin: 0.4rem 0; color: #ccc; }
 
+.footer-social {
+  margin-bottom: 1.5rem;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 700px) {
   .desktop-nav { display: none; }          /* simple: hide nav on small screens */
   .hero { min-height: 70vh; padding: 3rem 1rem; }
-  .hero-logo { max-width: 240px; }
   .hero-ctas { flex-direction: column; align-items: center; }
   .btn { width: 100%; max-width: 280px; text-align: center; }
   p { font-size: 1.1rem; }
