@@ -8,9 +8,9 @@
   --green-hover: #14603c;
   --text: #1a1a1a;
   --muted: #444;
-  --light-bg: #e8f0e9;          /* slightly darker green */
+  --light-bg: #e8f0e9;
   --white: #ffffff;
-  --max-width: 640px;           /* matched to video width */
+  --max-width: 640px;
 }
 
 html {
@@ -31,7 +31,7 @@ body {
 
 img { max-width: 100%; height: auto; display: block; }
 
-/* All hyperlinks now match the Investor Portal green */
+/* All hyperlinks match the Investor Portal green */
 a { 
   color: var(--green); 
   text-decoration: none; 
@@ -39,6 +39,13 @@ a {
 a:hover { 
   color: var(--green-hover); 
   text-decoration: underline; 
+}
+
+/* Brand name – American Typewriter (matches the logo) */
+.brand {
+  font-family: "American Typewriter", "Courier New", Courier, monospace;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 /* ===== Sticky Header ===== */
@@ -325,7 +332,7 @@ p {
 
 /* ===== Next Steps & Footer ===== */
 .next-steps { 
-  background: #e0ebe2;          /* slightly darker to match */
+  background: #e0ebe2;
 }
 
 .closing {
