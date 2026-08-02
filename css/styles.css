@@ -275,7 +275,7 @@ p {
   flex-wrap: wrap;
 }
 
-/* 30% smaller than original 32px → ~22px */
+/* 30% smaller */
 .social-row img { 
   height: 22px; 
   width: auto; 
