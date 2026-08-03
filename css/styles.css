@@ -10,7 +10,8 @@
   --muted: #444;
   --light-bg: #e8f0e9;
   --white: #ffffff;
-  --max-width: 480px;           /* 75% of video width (640px) */
+  --max-width: 640px;           /* overall section / video width */
+  --text-width: 480px;          /* 75% of video width for paragraphs only */
 }
 
 html {
@@ -41,7 +42,7 @@ a:hover {
   text-decoration: underline; 
 }
 
-/* Brand name – American Typewriter (matches the logo) */
+/* Brand name – American Typewriter */
 .brand {
   font-family: "American Typewriter", "Courier New", Courier, monospace;
   font-weight: 600;
@@ -237,13 +238,14 @@ a:hover {
   text-align: center;
 }
 
+/* Only paragraphs are constrained to 75% width */
 .container p {
-  max-width: 100%;
+  max-width: var(--text-width);
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Enhanced Section Headings */
+/* Headings stay full width so they never wrap */
 h2 {
   font-size: clamp(1.55rem, 4vw, 2.2rem);
   font-weight: 700;
@@ -253,6 +255,8 @@ h2 {
   position: relative;
   display: inline-block;
   padding-bottom: 0.6rem;
+  max-width: none;               /* important – do not constrain headings */
+  white-space: nowrap;           /* keep on one line when possible */
 }
 
 h2::after {
@@ -369,6 +373,7 @@ p {
   h2 {
     font-size: clamp(1.35rem, 5.2vw, 1.7rem);
     letter-spacing: -0.03em;
+    white-space: normal;         /* allow wrap only on very small screens if absolutely necessary */
   }
 
   h2::after {
