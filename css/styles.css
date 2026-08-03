@@ -336,7 +336,7 @@ p {
 
 /* ===== Next Steps & Footer ===== */
 .next-steps { 
-  background: #e0ebe2;
+  background: var(--white);     /* changed to white to keep the alternating pattern */
 }
 
 .closing {
@@ -358,7 +358,7 @@ p {
 }
 
 .site-footer p {
-  max-width: none;               /* override the 480px text constraint */
+  max-width: none;
   margin-left: auto;
   margin-right: auto;
 }
