@@ -19,7 +19,7 @@ When starting a new thread:
 1. Read this file first.
 2. Pull fresh files from `gh-pages` (and the current feature branch if one exists) before recommending full-file replacements.
 3. Always deliver complete files, never diffs, unless Ray asks otherwise.
-4. Do not overwrite Ray’s manual `<br>` tags unless he asks.
+4. Do not overwrite Ray's manual `<br>` tags unless he asks.
 5. Bump the CSS cache buster in `index.html` when CSS changes.
 
 ---
@@ -63,7 +63,7 @@ http://localhost:8000
 ```
 
 Notes:
-- Stop the server with `Ctrl+C`
+- Stop the server with Ctrl+C
 - If port 8000 is already in use, use another port:
 
 ```
@@ -72,8 +72,28 @@ python3 -m http.server 8001
 
 Then open `http://localhost:8001`
 - After you save a local file, refresh the browser.
-- After a CSS change, do a hard refresh (`Cmd+Shift+R` on Mac) or bump the cache-buster query string.
+- After a CSS change, do a hard refresh (Cmd+Shift+R on Mac) or bump the cache-buster query string.
 - Use this local server while iterating with Grok. Push to GitHub after a change looks right locally.
+
+### 3. How to update GROK.md
+
+Do not copy GROK.md from the Grok web UI. The chat renderer breaks headings and code fences.
+
+Future GROK.md updates must use the blob / base64 path:
+
+1. Grok sends a base64 blob.
+2. Ray saves that blob as `.github/GROK.b64`
+3. From `.github/`, Ray unpacks it with:
+
+```
+base64 -D -i GROK.b64 -o GROK.md
+```
+
+On Linux, use `base64 -d` instead of `base64 -D`.
+
+4. Open `.github/GROK.md` in a plain-text editor and confirm the headings look normal.
+5. Commit and push `.github/GROK.md` to `gh-pages`.
+6. Do not commit `GROK.b64` unless Ray wants a local scratch copy. It is not needed on the live branch.
 
 ---
 
@@ -91,7 +111,7 @@ Core message:
 
 Brand rules:
 - The company name is always **ROIClear** with no space
-- “ROI Clear” appears only as an intentional SEO misspelling hyperlink to https://ROIClear.com
+- "ROI Clear" appears only as an intentional SEO misspelling hyperlink to https://ROIClear.com
 - Wrap visible occurrences of the name in `<span class="brand">ROIClear</span>`
 - Brand font: `"American Typewriter", "Courier New", Courier, monospace`
 
@@ -162,7 +182,7 @@ Layout rules:
 - Header keeps the green Investor Portal button plus hamburger on mobile
 - Footer is full width and centered
 - Footer social icons: X, LinkedIn, YouTube only
-- X footer link is Ray’s personal account (`https://x.com/RayHightower`), not @ROIClear
+- X footer link is Ray's personal account (`https://x.com/RayHightower`), not @ROIClear
 - Facebook and Instagram were intentionally removed from the footer
 - Next Steps section background is white, not green
 - Alternating sections: white / light green / white / light green / white
@@ -201,17 +221,17 @@ Preferred `<br>` usage:
 ## Important product / copy notes
 
 Hero:
-- “ROIClear buys and improves multifamily investment properties.”
+- "ROIClear buys and improves multifamily investment properties."
 - No CTA button on the photo
 
 Investors copy:
-- “We attract investors…” not “We partner with investors…”
+- "We attract investors..." not "We partner with investors..."
   That wording change is intentional and important.
 
 Podcast copy should keep the capitalism / business-leader tone.
 
 Footer SEO line:
-- “ROI Clear” and “ROIClear” both link to https://ROIClear.com
+- "ROI Clear" and "ROIClear" both link to https://ROIClear.com
 - Motivation: capture the misspelled spaced version
 
 ---
