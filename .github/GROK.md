@@ -193,5 +193,3 @@ Ask Ray before rewriting copy
 Protect rhetorical line breaks
 Keep the site conservative and investor-grade, not flashy
 
-
-Overwrite `.github/GROK.md`, commit, and push to `gh-pages`. The new “Instructions for the Human” section is near the top so you can find it quickly at the start of a session.
