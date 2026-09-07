@@ -337,6 +337,20 @@ p {
   margin: 1.5rem auto 0.75rem;
 }
 
+/* ===== Book promo ===== */
+.book-promo {
+  margin: 2.5rem auto 0;
+  max-width: var(--text-width);
+}
+
+.book-promo .book-cover {
+  width: 220px;
+  height: auto;
+  margin: 0 auto 1.25rem;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
 /* ===== Next Steps & Footer ===== */
 .next-steps { 
   background: var(--white);
@@ -396,6 +410,10 @@ p {
   }
 
   p { font-size: 1.1rem; }
+
+  .book-promo .book-cover {
+    width: 180px;
+  }
 }
 
 /* Extra protection for iPad portrait / landscape */
@@ -422,5 +440,9 @@ p {
 
   h2 {
     font-size: 1.28rem;
+  }
+
+  .book-promo .book-cover {
+    width: 160px;
   }
 }
