@@ -310,16 +310,15 @@ p {
 .mt-2 { margin-top: 2rem; }
 .mt-3 { margin-top: 2.75rem; }
 
-/* ===== Videos ===== */
+/* ===== Section stills (replaced Vimeo) ===== */
 .video-wrapper {
   max-width: 640px;
   margin: 2rem auto 0;
 }
 
-.video-embed {
+.section-still {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
