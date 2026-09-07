@@ -179,14 +179,41 @@ a:hover {
   justify-content: center;
   text-align: center;
   background: #0d1f17;
+  color: white;
+  padding: 4rem 1.25rem;
+  overflow: hidden;
+}
+
+/* Ken Burns: reuse hero-bg.jpg, no extra upload */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: url('../images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
-  color: white;
-  padding: 4rem 1.25rem;
+  transform: scale(1);
+  animation: hero-kenburns 28s ease-out forwards;
+  z-index: 0;
+}
+
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(1.5%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
+  }
 }
 
 .hero-content {
+  position: relative;
   max-width: 820px;
   z-index: 2;
 }
