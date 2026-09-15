@@ -438,8 +438,8 @@ p {
 }
 
 /* ===== Next Steps & Footer ===== */
-.next-steps { 
-  background: var(--white);
+.next-steps {
+  background: var(--light-bg);
 }
 
 .closing {
