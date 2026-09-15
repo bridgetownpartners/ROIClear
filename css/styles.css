@@ -185,34 +185,85 @@ a:hover {
   overflow: hidden;
 }
 
-/* Ken Burns: balloon-rise over North Phoenix */
-.hero::before {
+.hero::before,
+.hero::after {
   content: "";
   position: absolute;
-  inset: -8%;
-  background-image: url('../images/hero-bg.jpg');
+  inset: -10%;
   background-size: cover;
   background-position: center;
-  transform: scale(1.04) translate3d(0, 3%, 0);
-  animation: hero-kenburns 36s ease-in-out forwards;
   z-index: 0;
-  will-change: transform;
 }
 
-@keyframes hero-kenburns {
-  from {
+/* Balloon photo */
+.hero::before {
+  background-image: url('../images/hero-bg.jpg');
+  animation: hero-photo 56s ease-in-out infinite;
+}
+
+/* Map */
+.hero::after {
+  background-image: url('../images/hero2-bg.jpg');
+  animation: hero-map 56s ease-in-out infinite;
+}
+
+/* Photo rises, then dissolves to map */
+@keyframes hero-photo {
+  0% {
+    opacity: 1;
     transform: scale(1.04) translate3d(0, 3%, 0);
   }
-  to {
-    transform: scale(1.18) translate3d(-3%, -6%, 0);
+  40% {
+    opacity: 1;
+    transform: scale(1.16) translate3d(-3%, -5%, 0);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.16) translate3d(-3%, -5%, 0);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(1.04) translate3d(0, 3%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.04) translate3d(0, 3%, 0);
+  }
+}
+
+/* Map pans east while visible */
+@keyframes hero-map {
+  0% {
+    opacity: 0;
+    transform: scale(1.06) translate3d(4%, 0, 0);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(1.06) translate3d(4%, 0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06) translate3d(4%, 0, 0);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1.16) translate3d(-5%, 2%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.16) translate3d(-5%, 2%, 0);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero::before {
+  .hero::before,
+  .hero::after {
     animation: none;
     inset: 0;
     transform: none;
+  }
+  .hero::after {
+    display: none;
   }
 }
 
