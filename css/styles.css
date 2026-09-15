@@ -198,22 +198,28 @@ a:hover {
 /* Balloon photo */
 .hero::before {
   background-image: url('../images/hero-bg.jpg');
-  animation: hero-photo 56s ease-in-out infinite;
+  animation: hero-photo 24s linear infinite;
 }
 
 /* Map */
 .hero::after {
   background-image: url('../images/hero2-bg.jpg');
-  animation: hero-map 56s ease-in-out infinite;
+  animation: hero-map 24s linear infinite;
 }
 
-/* Photo rises, then dissolves to map */
+/*
+  24s cycle
+  0–10s  photo pans
+  10–12s dissolve to map
+  12–22s map pans
+  22–24s dissolve to photo
+*/
 @keyframes hero-photo {
   0% {
     opacity: 1;
     transform: scale(1.04) translate3d(0, 3%, 0);
   }
-  40% {
+  41.67% {
     opacity: 1;
     transform: scale(1.16) translate3d(-3%, -5%, 0);
   }
@@ -221,7 +227,7 @@ a:hover {
     opacity: 0;
     transform: scale(1.16) translate3d(-3%, -5%, 0);
   }
-  90% {
+  91.67% {
     opacity: 0;
     transform: scale(1.04) translate3d(0, 3%, 0);
   }
@@ -231,13 +237,12 @@ a:hover {
   }
 }
 
-/* Map pans east while visible */
 @keyframes hero-map {
   0% {
     opacity: 0;
     transform: scale(1.06) translate3d(4%, 0, 0);
   }
-  40% {
+  41.67% {
     opacity: 0;
     transform: scale(1.06) translate3d(4%, 0, 0);
   }
@@ -245,7 +250,7 @@ a:hover {
     opacity: 1;
     transform: scale(1.06) translate3d(4%, 0, 0);
   }
-  90% {
+  91.67% {
     opacity: 1;
     transform: scale(1.16) translate3d(-5%, 2%, 0);
   }
