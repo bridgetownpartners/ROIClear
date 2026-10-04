@@ -439,7 +439,7 @@ p {
 
 /* ===== Next Steps & Footer ===== */
 .next-steps {
-  background: var(--light-bg);
+  background: var(--white);
 }
 
 .closing {
